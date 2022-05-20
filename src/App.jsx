@@ -20,7 +20,7 @@ const App = () => {
     const voenDate = new Date("2022-07-08")
     onMount(() => {setRussian(r), setMath(m), setPhysics(p), setInformatics(i), setVoencom(v)})
     return <div className="flex-1 flex flex-col p-5">
-        <h1 className="self-center font-bold text-8xl text-teal-600">Считаем секунды до депрессии</h1>
+        <h1 className="self-center font-bold text-4xl xl:text-6xl 2xl:text-8xl text-teal-600">Считаем секунды до депрессии</h1>
         <Slider onClick={() => { russian().scrollIntoView({ behavior: "smooth" }); console.log(russian) }} />
         <Img src={myFace} />
         <SecondsTillDepression ref={r} title="ЕГЭ по русскому" date={russianDate} nextRef={math()} />
@@ -41,7 +41,7 @@ const Img = props => {
 
 const Slider = props => {
     return <div onClick={props.onClick} className="self-center group w-full flex items-center justify-center my-10">
-        <h1 className="text-8xl font-bold duration-300 group-hover:text-rose-400 scale-150 text-rose-700 cursor-pointer select-none">↓</h1>
+        <h1 className="text-4xl xl:text-6xl 2xl:text-8xl font-bold duration-300 group-hover:text-rose-400 scale-150 text-rose-700 cursor-pointer select-none">↓</h1>
     </div>
 }
 
@@ -50,9 +50,9 @@ const SecondsTillDepression = props => {
     const timer = setInterval(() => setSeconds(Math.ceil((props.date - Date.now()) / 1000)), 1000)
     onCleanup(() => clearInterval(timer))
     return <div className="my-40 w-full py-32 flex flex-col" ref={props.ref}>
-        <h1 className="font-bold text-6xl self-center uppercase">Секунд до <span className="text-rose-500">{props.title}</span></h1>
+        <h1 className="font-bold text-3xl xl:text-4xl 2xl:text-6xl self-center uppercase">Секунд до <span className="text-rose-500">{props.title}</span></h1>
         <h2 className="font-bold my-3 text-5xl self-center uppercase">{seconds()}</h2>
-        <button onClick={() => {props.nextRef.scrollIntoView({behavior: "smooth"})}} className="ring-rose-500 ring-2 rounded-lg p-3 text-4xl text-rose-500 text-center w-1/2 self-center mt-20 duration-300 hover:bg-rose-500 hover:text-white">Следующий</button>
+        <button onClick={() => {props.nextRef.scrollIntoView({behavior: "smooth"})}} className="ring-rose-500 ring-2 rounded-lg p-3 font-bold text-xl xl:text-3xl 2xl:text-4xl text-rose-500 text-center w-1/2 self-center mt-20 duration-300 hover:bg-rose-500 hover:text-white">Следующий</button>
     </div>
 }
 
