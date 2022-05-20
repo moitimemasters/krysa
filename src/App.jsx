@@ -52,7 +52,7 @@ const SecondsTillDepression = props => {
     return <div className="my-40 w-full py-32 flex flex-col" ref={props.ref}>
         <h1 className="font-bold text-6xl self-center uppercase">Секунд до <span className="text-rose-500">{props.title}</span></h1>
         <h2 className="font-bold my-3 text-5xl self-center uppercase">{seconds()}</h2>
-        <button onClick={() => {props.nextRef.scrollIntoView({behavior: "smooth"})}} className="ring-rose-500 ring-2 rounded-lg p-3 text-4xl text-rose-500 text-center w-1/2 self-center mt-20 duration-300 hover:bg-rose-500 hover:text-white ring-offset-purple-700">Следующий</button>
+        <button onClick={() => {props.nextRef.scrollIntoView({behavior: "smooth"})}} className="ring-rose-500 ring-2 rounded-lg p-3 text-4xl text-rose-500 text-center w-1/2 self-center mt-20 duration-300 hover:bg-rose-500 hover:text-white">Следующий</button>
     </div>
 }
 
